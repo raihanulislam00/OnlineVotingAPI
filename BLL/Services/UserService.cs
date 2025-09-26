@@ -33,7 +33,7 @@ namespace BLL.Services
             var user = DataAccess.UserRepoData().GetByUsernameAndPassword(UserName, password);
             if (user != null)
             {
-                return GetMapper().Map<UserDTO>(user); 
+                return GetMapper().Map<UserDTO>(user);
             }
             return null;
         }

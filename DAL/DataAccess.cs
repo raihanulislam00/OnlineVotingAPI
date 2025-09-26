@@ -1,12 +1,12 @@
-﻿using DAL.EF.TableModels;
-using DAL.Interfaces;
+﻿using DAL.Interfaces;
 using DAL.Repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DAL.EF.Table;
+using DAL.EF.TableModels;
 namespace DAL
 {
     public class DataAccess
@@ -18,7 +18,6 @@ namespace DAL
         }
         public static IRepo<Option, int, bool> OptionData()
         {
-
             return new OptionRepo();
         }
         public static IRepo<Vote, int, bool> VoteData()

@@ -9,12 +9,10 @@ namespace DAL.Repos
 {
     internal class Repo
     {
-       
-            protected PContext db;
-            internal Repo()
-            {
-                db = new PContext();
-            }
+        protected VContext db;
+        internal Repo()
+        {
+            db=new VContext();
         }
-    
+    }
 }

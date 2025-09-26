@@ -10,12 +10,12 @@ namespace BLL.DTOs
     {
         public int Id { get; set; }
 
-       
+
         public int PollId { get; set; }
 
         public int OptionId { get; set; }
 
-       
+
         public int? UserId { get; set; }
     }
 }

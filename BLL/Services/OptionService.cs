@@ -34,10 +34,10 @@ namespace BLL.Services
             return GetMapper().Map<List<OptionDTO>>(data);
         }
 
-        public static OptionDTO GetById(int id)
+        public static List<OptionDTO> GetByPollId(int pollId)
         {
-            var data = DataAccess.OptionData().Get(id);
-            return GetMapper().Map<OptionDTO>(data);
+            var data = DataAccess.OptionData().Get().Where(x => x.PollId == pollId).ToList();
+            return GetMapper().Map<List<OptionDTO>>(data);
         }
 
         public static bool Update(OptionDTO obj)
@@ -49,6 +49,11 @@ namespace BLL.Services
         public static bool Delete(int id)
         {
             return DataAccess.OptionData().Delete(id);
+        }
+
+        public static object GetById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

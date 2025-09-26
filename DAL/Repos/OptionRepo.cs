@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Repos 
+namespace DAL.Repos
 {
     internal class OptionRepo : Repo, IRepo<Option, int, bool>
     {

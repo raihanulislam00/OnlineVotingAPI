@@ -1,4 +1,5 @@
-﻿using DAL.EF.TableModels;
+﻿using DAL.EF.Table;
+using DAL.EF.TableModels;
 using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class UserRepo:Repo,IUserRepo
+    internal class UserRepo : Repo, IUserRepo
     {
         public bool Create(User obj)
         {

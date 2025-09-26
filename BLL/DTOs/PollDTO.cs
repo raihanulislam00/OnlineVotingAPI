@@ -12,7 +12,7 @@ namespace BLL.DTOs
         public string Question { get; set; }
         public DateTime EndDateTime { get; set; }
 
-        
+
         public List<OptionDTO> Options { get; set; }
 
         public PollDTO()

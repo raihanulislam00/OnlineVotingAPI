@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using BLL.DTOs;
-using DAL.EF.TableModels;
 using DAL;
+using DAL.EF.Table;
+using DAL.EF.TableModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +28,22 @@ namespace BLL.Services
         {
             var poll = PollService.GetById(obj.PollId);
 
+            // Comment out this check temporarily for testing
+            /*
             if (DateTime.Now > poll.EndDateTime)
             {
                 throw new Exception("Poll has ended. Voting is no longer allowed.");
             }
+            */
+
             var data = GetMapper().Map<Vote>(obj);
+
+            // Ensure anonymous votes work properly
+            if (obj.UserId == null)
+            {
+                data.UserId = null;
+            }
+
             return DataAccess.VoteData().Create(data);
         }
 

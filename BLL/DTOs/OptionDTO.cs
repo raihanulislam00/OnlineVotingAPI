@@ -11,9 +11,6 @@ namespace BLL.DTOs
         public int Id { get; set; }
         public string OptionText { get; set; }
 
-       
         public int PollId { get; set; }
-
-       
     }
 }
